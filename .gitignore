@@ -1,0 +1,19 @@
+# Directories #
+code/RemoteSystemsTempFiles/
+code/Servers/
+code/db/lib/
+code/sqlf-demo/target/surefire/
+code/sqlf-demo/target/classes/
+code/sqlf-demo/target/m2e-wtp/
+
+# STS #
+code/sqlf-demo/code/.metadata/
+code/sqlf-demo/target/m2e-wtp
+
+# Compiled Stuff #
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
