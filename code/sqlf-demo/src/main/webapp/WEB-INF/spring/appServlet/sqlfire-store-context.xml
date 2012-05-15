@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"       
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+						   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+						   
+	<bean id="sqlfDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${data.sqlf.driverClassName}"/>
+		<property name="url" value="${data.sqlf.url}"/>
+	</bean>
+
+	<bean id="sqlfTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="sqlfDataSource"/>
+		<property name="defaultTimeout" value="${data.tran.timeout}" />
+		<property name="nestedTransactionAllowed" value="true" />
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="sqlfTransactionManager" />
+	
+	<bean id="sqlfTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="sqlfDataSource"/>
+    </bean>
+    
+    <bean id="sqlfDao" class="com.vmware.example.sqlfire.data.SimpleStoreDao">
+    	<property name="dataSource" ref="sqlfTemplate" />
+        <property name="dataSourceContext" value="${data.sqlf.schema}"/>
+    </bean>
+    
+    <bean id="sqlfService" name="sqlfService" class="com.vmware.example.sqlfire.service.SimpleStoreService">
+    	<property name="dao" ref="sqlfDao" />
+    	<property name="storeType" value="${data.sqlf.storeType}" />
+    </bean>
+	
+ 
+</beans>
+

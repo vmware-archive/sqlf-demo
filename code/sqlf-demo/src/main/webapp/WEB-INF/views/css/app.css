@@ -1,0 +1,169 @@
+  body {
+     padding: 0px;
+     margin: 0px;
+     font: 62.5% "Trebuchet MS", sans-serif; 
+     background: #000 url(img/bg-body.jpg) repeat left top;
+     height: 101%;
+     overflow: scroll;
+  }
+  .container{
+     position: relative;
+     overflow: hidden;
+     margin: 20px auto;
+     padding: 10px;
+     width: 900px;
+  }
+  .header{
+     float: left;
+     width: 100%;
+     padding: 10px;
+    font: 1.2em Arial, sans-serif; 
+  }
+  #header-title {
+    font: 3em Arial, sans-serif; 
+    color: #999;
+  }
+  #header-title img {
+    float: right;
+    margin-right: 20px; 
+    
+  }
+  #header-info {
+    margin-top: 10px;
+    margin-right: 20px; 
+    padding: 0 .7em;
+    height: auto;
+  }
+  #header-info-icon {
+    float: left;
+    margin-right: 3px;
+  }
+  .content{
+     width: 100%;
+     right: 90%;
+  }
+  #tabs-container {
+     width: 100%;   
+     right: 90%;
+     font: 1.2em Arial, sans-serif; 
+  }
+  #tabs {
+     margin: 0 10px;
+  }
+  .content-left{
+     float: left;
+     width: 32%;
+     margin-left: 10px;
+     margin-right: 10px;
+  }
+  .content-center{
+     float: left;
+     width: 20%;
+  }
+  .content-right{
+     float: right;
+     width: 43%;
+     margin-right: 10px;
+  }
+  .spacer {
+    clear: both;
+    height: 1px;
+  }
+  .spacer-10 {
+    clear: both;
+    height: 10px;
+  }
+  .spacer-20 {
+    clear: both;
+    height: 20px;
+  }
+  #requestId {
+  	width: 75px;
+  }
+  .center-slider {
+  	margin: 5px 0px;
+  }
+  .center-input {
+  	width: 35px;
+  }
+  h2 {
+  	color: #dcdcdc;
+  	font: 1.6em Arial, sans-serif; 
+  	border-bottom: 2px solid #fff;
+  }
+  label {
+  	color: #fff;
+  	font: 1.2em Arial, sans-serif; 
+  	display: inline-block;
+  	width: 120px;
+  	padding: 4px 0px;
+  }
+  
+  .long {
+	width: 100%;
+  }
+  
+  fieldset {
+  	border: 0;
+  	border-bottom: 1px solid #dcdcdc;
+  	padding: 10px 5px;
+  }
+  
+  #button-ctrl button {
+  	width: 100%;
+  	text-align: left;
+  }
+  
+  #resultTable {
+  	width: 100%;
+  	border: 0;
+  	padding: 0;
+  	margin: 0;
+  	color: #333;
+  }
+
+  
+  #resultTable th {
+  	background-color: #dcdcdc;
+  	padding: 3px;
+  	font-weight: bold;
+  	font: 1.2em Arial, sans-serif; 
+  }
+  #resultTable td {
+  	background-color: #fff;
+  	padding: 2px;
+  	text-align: center;
+  	font: 1.2em Arial, sans-serif;
+  }
+  
+  #resultChart {
+  	width: 100%;
+  	height: 150px;
+  	clear: both;
+  	margin-bottom: 20px;
+  }
+  
+  #progressbarCtrl {
+  	border-top: 1px solid #dcdcdc;
+  	border-bottom: 1px solid #dcdcdc;
+  	margin-top: 15px;
+  	padding-bottom: 15px;
+  }
+  
+  .highlighter {
+    display: inline-block;
+  	vertical-align: top;
+  }
+  .align-left {
+  	float: left;
+  	margin: 5px 20px 5px 0;
+  }
+  .align-right {
+  	float: right;
+  	margin: 0 0 0 30px;
+  	padding: 0;
+  }
+  a.dark {
+  	color: #000;
+  }
+ 

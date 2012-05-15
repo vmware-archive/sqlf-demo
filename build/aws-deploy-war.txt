@@ -1,0 +1,11 @@
+# stop tomcat
+sudo /etc/init.d/tomcat6 stop
+
+# clean up web aps
+sudo rm -R /var/lib/tomcat6/webapps/sqlf-demo*
+
+# deploy new app
+sudo mv ~/war/sqlf-demo.war /var/lib/tomcat6/webapps/
+
+# restart tomcat
+sudo /etc/init.d/tomcat6 start

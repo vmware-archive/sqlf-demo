@@ -7,8 +7,8 @@ code/sqlf-demo/target/classes/
 code/sqlf-demo/target/m2e-wtp/
 
 # STS #
-code/sqlf-demo/code/.metadata/
-code/sqlf-demo/target/m2e-wtp
+.metadata/
+m2e-wtp/
 
 # Compiled Stuff #
 *.class
