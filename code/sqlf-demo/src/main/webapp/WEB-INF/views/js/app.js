@@ -29,10 +29,10 @@ $(document).ready(function(){
 	    storeTypeSQLF = "sqlf",
     	numberOfRequest = $("#numberOfRequest"),
     	numberOfRequestSlider = $("#numberOfRequestSlider").slider({
-			value:500,
-			min: 50,
+			value:200,
+			min: 20,
 			max: 500,
-			step: 50,
+			step: 20,
 			slide: function(event, ui) {
 				numberOfRequest.val(ui.value);
 			}
@@ -78,7 +78,7 @@ $(document).ready(function(){
 		totalNumberOfRequests = 0,
 		resultChartOptions = {
 	        series: { shadowSize: 0 },
-	        yaxis: { min: 0, max: 300 },
+	        yaxis: { min: 0, max: 500 },
 	        xaxis: { min: 0, max: 500, show: false }
 		},
 		resultChartData = [],

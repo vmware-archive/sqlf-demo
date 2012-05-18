@@ -17,7 +17,7 @@
 	<bean id="rdbmsTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="rdbmsDataSource"/>
 		<property name="defaultTimeout" value="${data.tran.timeout}" />
-		<property name="nestedTransactionAllowed" value="true" />
+		<property name="nestedTransactionAllowed" value="true"/>
 	</bean>
 	
 	<tx:annotation-driven transaction-manager="rdbmsTransactionManager" />

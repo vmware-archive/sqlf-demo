@@ -15,7 +15,7 @@
 	<bean id="sqlfTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="sqlfDataSource"/>
 		<property name="defaultTimeout" value="${data.tran.timeout}" />
-		<property name="nestedTransactionAllowed" value="true" />
+		<property name="nestedTransactionAllowed" value="true"/>
 	</bean>
 	
 	<tx:annotation-driven transaction-manager="sqlfTransactionManager" />

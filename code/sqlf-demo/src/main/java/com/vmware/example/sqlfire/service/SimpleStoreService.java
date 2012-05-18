@@ -35,6 +35,9 @@ public class SimpleStoreService implements StoreService {
 	@Autowired
 	SimpleTimestampGenerator timestampGenerator;
 
+	public SimpleStoreService() {
+		logger.debug("SimpleStoreService instance created");
+	}
 
 	@Override
 	public Response saveRequest(Request request) {
@@ -47,10 +50,9 @@ public class SimpleStoreService implements StoreService {
 		return getRequest(request.getId());
 	}
 
-
 	@Override
 	@Transactional
-	public synchronized Response runRequest(Request request) {
+	public Response runRequest(Request request) {
 		logger.debug("Request: " + request);
 
 		// Start timer
@@ -62,14 +64,13 @@ public class SimpleStoreService implements StoreService {
 
 			Order order = new Order();
 			order.setOn(timestampGenerator.getNow());
-			String oId = request.getId() + "-" + request.getIndex() + "-" + j;
-			order.setId(oId);
+			order.setId(idGenerator.getNextId());
 
 			for (int i = 0; i < request.getItems(); i++) {
 				OrderItem item = new OrderItem();
 				item.setName(ITEM_NAME_PREFIX + i);
 				item.setPrice(new BigDecimal(i));
-				item.setId(oId + "-" + i);
+				item.setId(idGenerator.getNextId());
 				order.getItems().add(item);
 			}
 
@@ -80,20 +81,27 @@ public class SimpleStoreService implements StoreService {
 
 		}
 
-		logger.debug("Delete Orders and Order Items for: " + request);
+		logger.debug("Update Order Items for: " + request);
 		for (Order order : orders) {
-			logger.debug("Delete Order Items: " + order.getId());
-			dao.removeOderItems(order.getId());
 
-			logger.debug("Delete Order: " + request.getId());
-			dao.removeOders(request.getId());
+			logger.debug("Update: " + order.getId());
+			order.setOn(timestampGenerator.getNow());
+			dao.updateOrder(order);
+
+			for (OrderItem item : order.getItems()) {
+
+				logger.debug("Update Order item: " + order.getId());
+				item.setPrice(new BigDecimal(item.getPrice().doubleValue() * 2));
+				dao.updateOrderItem(item);
+			}
+
 		}
 
 		// Stop timer
 		watch.stop();
 
 		// returns stats only for the current call
-		// summary from the seperate call
+		// summary from the separate call
 		Request storeRequest = dao.getRequest(request.getId());
 		storeRequest.setOrders(request.getOrders());
 		storeRequest.setItems(request.getItems());
@@ -106,6 +114,11 @@ public class SimpleStoreService implements StoreService {
 		return getRequest(request.getId());
 	}
 
+	@Override
+	public void cleanup() {
+		logger.debug("Cleanup");
+		dao.cleanupOrdersAndOderItems();
+	}
 
 	@Override
 	public Response getRequest(String requestId) {
@@ -124,12 +137,10 @@ public class SimpleStoreService implements StoreService {
 		this.dao = dao;
 	}
 
-
 	@Override
 	public void setStoreType(String storeType) {
 		this.storeType = storeType;
 	}
-
 
 	@Override
 	public String getStoreType() {

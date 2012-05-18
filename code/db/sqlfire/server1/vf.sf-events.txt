@@ -1,0 +1,5 @@
+2012-05-17T19:02:23,INFO,EventManagerStartedEvent,
+2012-05-17T19:02:23,INFO,LicenseActivatedEvent,expirationDate=unset|expirationType=floating-eval|serialNumber=C10EH-H4LD1-48DKR-04AKK-2PHQF|allowedVersions=vf.tc-3+vf.tc-2+vf.rmq-2+vf.ins-2+vf.emj-1+vf.ws-6+vf.ws-5+vf.gf.acn-7+vf.rmq-3+vf.hyp-5+vf.sf-2+vf.hyp-4+vf.emj-2+vf.sf-1+vf.gf.acn-6+vf.ins-1|available=60
+2012-05-17T19:02:23,INFO,LicenseActivatedEvent,expirationDate=unset|expirationType=floating-eval|serialNumber=C10EH-H4LD1-48DKR-04AKK-2PHQF|allowedVersions=vf.rmq-2+vf.ws-6+vf.emj-1+vf.tc-3+vf.emj-2+vf.ws-5+vf.ins-1+vf.sf-1+vf.tc-2+vf.hyp-5+vf.gf.acn-7+vf.hyp-4+vf.ins-2+vf.sf-2+vf.gf.acn-6+vf.rmq-3|available=60
+2012-05-17T19:02:23,INFO,ComponentStateChangeEvent,instanceIdType=self|instanceId=self|timestamp=2012-05-17T19:02:23|state=on
+2012-05-17T19:02:23,INFO,UpdatedLicenseStateEvent,enforcement=soft|licenseType=local|expirationDate=2012-07-16T19:02:23|used=2|available=60|addons=<empty>

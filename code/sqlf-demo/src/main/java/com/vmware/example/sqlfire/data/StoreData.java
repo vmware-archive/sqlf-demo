@@ -1,6 +1,7 @@
 package com.vmware.example.sqlfire.data;
 
 import com.vmware.example.sqlfire.domain.Order;
+import com.vmware.example.sqlfire.domain.OrderItem;
 import com.vmware.example.sqlfire.domain.Request;
 
 public interface StoreData {
@@ -13,8 +14,10 @@ public interface StoreData {
 
 	public abstract void saveOder(Request request, Order order);
 
-	public abstract void removeOders(String requestId);
+	public abstract void updateOrderItem(OrderItem item);
 
-	public abstract void removeOderItems(String orderId);
+	public abstract void updateOrder(Order order);
+
+	public abstract void cleanupOrdersAndOderItems();
 
 }

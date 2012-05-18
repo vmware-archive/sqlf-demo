@@ -12,7 +12,7 @@
 	
 	<!-- Application Loggers -->
 	<logger name="com.vmware.example.sqlfire">
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->

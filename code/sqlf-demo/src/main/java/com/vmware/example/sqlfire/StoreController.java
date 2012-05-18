@@ -74,10 +74,21 @@ public class StoreController {
 		request.setOn(timestampGenerator.getNow());
 		request.setDuration(0L);
 
-		Response response = getService(storeType).runRequest(request);
+		StoreService service = getService(storeType);
+
+		Response response = service.runRequest(request);
 		response.getRequest().setIndex(request.getIndex());
 
 		return response;
+	}
+
+	@RequestMapping(value = "/{storeType}/order/", method = RequestMethod.DELETE)
+	public @ResponseBody
+	String cleanup(@PathVariable String storeType) {
+
+		getService(storeType).cleanup();
+
+		return "OK";
 	}
 
 	@ExceptionHandler
