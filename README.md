@@ -7,3 +7,10 @@ While the specific performance metrics of an in-memory or relational databases c
 
  * Scale-out data-tier enablement
  * Real-time Cloud-scale data synchronization support
+
+dependencies 
+=========
+Assuming you already have a Java development envirnemnt configured, this demo app has the following dependancies:
+
+ * SQLFire 1.0.2
+ * MySQL Community Server
