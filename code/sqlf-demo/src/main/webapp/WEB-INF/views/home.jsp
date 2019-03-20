@@ -256,7 +256,7 @@
 				</p>
 				<p>
 					Note, that while SQLFire does support auto-generated table keys 
-					(or <a href="http://en.wikipedia.org/wiki/Surrogate_key" target="_new" class="dark">surrogate key</a>) 
+					(or <a href="https://en.wikipedia.org/wiki/Surrogate_key" target="_new" class="dark">surrogate key</a>) 
 					for purposes of demonstrating cross-datacenter synchronization, the demo data model expects the application
 					to generate its globally unique Ids. 
 				</p>
